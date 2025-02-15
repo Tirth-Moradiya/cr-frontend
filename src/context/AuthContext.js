@@ -5,11 +5,11 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(undefined); // ✅ Default to undefined (loading state)
+  const [user, setUser] = useState(undefined);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      console.log("User status changed: ", currentUser); // ✅ Debugging
+      console.log("User status changed: ", currentUser);
       setUser(currentUser);
     });
 
@@ -27,7 +27,6 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-// Custom hook to use AuthContext
 export const useAuth = () => {
   return useContext(AuthContext);
 };

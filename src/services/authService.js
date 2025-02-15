@@ -6,12 +6,6 @@ import {
   createUserWithEmailAndPassword,
 } from "firebase/auth";
 
-/**
- * Sign in using email and password
- * @param {string} email
- * @param {string} password
- * @returns {Promise<Object>} User credentials
- */
 export const signupUser = async (email, password) => {
   try {
     await createUserWithEmailAndPassword(auth, email, password);
@@ -32,23 +26,17 @@ export const loginWithEmail = async (email, password) => {
   }
 };
 
-/**
- * Sign in using Google Authentication
- * @returns {Promise<Object>} User credentials
- */
 export const loginWithGoogle = async () => {
   try {
+    console.log("auth, googleProvider", auth, googleProvider);
     const userCredential = await signInWithPopup(auth, googleProvider);
+    console.log("userCredential", userCredential);
     return { user: userCredential.user, error: null };
   } catch (error) {
     return { user: null, error: error.message };
   }
 };
 
-/**
- * Logout function
- * @returns {Promise<Object>} Success or error message
- */
 export const logout = async () => {
   try {
     await signOut(auth);

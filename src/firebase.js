@@ -1,8 +1,6 @@
-// Import Firebase SDKs
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
-// Firebase configuration using environment variables
 const firebaseConfig = {
   apiKey:
     process.env.REACT_APP_FIREBASE_API_KEY || process.env.FIREBASE_API_KEY,
@@ -24,7 +22,6 @@ const firebaseConfig = {
     process.env.FIREBASE_MEASUREMENT_ID,
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();

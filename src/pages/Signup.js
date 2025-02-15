@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Plus } from "lucide-react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { signupUser } from "../services/authService"; // Import API function
+import { signupUser } from "../services/authService";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -22,9 +22,9 @@ const Signup = () => {
     try {
       await signupUser(values.email, values.password);
       toast.success("Account created successfully!");
-      navigate("/login"); // Redirect to login after success
+      navigate("/login");
     } catch (err) {
-      toast.error(err.message); // Display Firebase error message in toast
+      toast.error(err.message);
     }
     setSubmitting(false);
   };

@@ -36,7 +36,6 @@ export const addPost = async (title, description, fetchPosts, setLoading) => {
   setLoading(false);
 };
 
-// Update an existing post
 export const updatePost = async (
   postId,
   title,
@@ -55,7 +54,6 @@ export const updatePost = async (
   setLoading(false);
 };
 
-// Delete a post
 export const deletePost = async (postId, fetchPosts, setLoadingID) => {
   setLoadingID(postId);
   try {

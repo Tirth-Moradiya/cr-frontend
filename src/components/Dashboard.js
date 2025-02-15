@@ -52,7 +52,6 @@ const Dashboard = () => {
     <div className="flex flex-col min-h-[90vh] bg-gray-100">
       <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
 
-      {/* Sidebar for Desktop */}
       <div className="hidden md:flex flex-col w-64 min-h-screen bg-gray-900 text-white p-5 space-y-4 fixed left-0 top-16">
         <button
           onClick={() => setSelectedTab("add")}
@@ -86,9 +85,7 @@ const Dashboard = () => {
         </button>
       </div>
 
-      {/* Main Content */}
       <div className="flex-1 p-4 sm:p-8">
-        {/* Add Post Form */}
         {selectedTab === "add" && (
           <div className="w-full max-w-lg mx-auto p-4 sm:p-6 bg-white shadow-lg rounded-lg">
             <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">
@@ -115,20 +112,12 @@ const Dashboard = () => {
                 className="w-full p-2 sm:p-3 text-white rounded flex justify-center items-center bg-blue-500 hover:bg-blue-600"
                 disabled={loading}
               >
-                {loading ? (
-                  <>
-                    {/* <FiLoader className="animate-spin text-lg sm:text-2xl text-white" /> */}
-                    Loading....
-                  </>
-                ) : (
-                  "Add Post"
-                )}
+                {loading ? <>Loading....</> : "Add Post"}
               </button>
             </form>
           </div>
         )}
 
-        {/* Update Post Form */}
         {selectedTab === "update" && (
           <div className="w-full max-w-lg mx-auto p-4 sm:p-6 bg-white shadow-lg rounded-lg">
             <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">
@@ -170,20 +159,12 @@ const Dashboard = () => {
                 className="w-full p-2 sm:p-3 text-white rounded flex justify-center items-center bg-yellow-500 hover:bg-yellow-600"
                 disabled={loading}
               >
-                {loading ? (
-                  <>
-                    {/* <FiLoader className="animate-spin text-lg sm:text-2xl text-white" /> */}
-                    Loading....
-                  </>
-                ) : (
-                  "Update Post"
-                )}
+                {loading ? <>Loading....</> : "Update Post"}
               </button>
             </form>
           </div>
         )}
 
-        {/* Delete Post Section */}
         {selectedTab === "delete" && (
           <div className="w-full max-w-lg mx-auto p-4 sm:p-6 bg-white shadow-lg rounded-lg">
             <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">
@@ -200,14 +181,7 @@ const Dashboard = () => {
                     onClick={() => handleDeletePost(post.id)}
                     className="bg-red-500 text-white px-2 sm:px-3 py-1 rounded hover:bg-red-600 flex items-center"
                   >
-                    {loadingID === post.id ? (
-                      <>
-                        {/* <FiLoader className="animate-spin text-lg sm:text-2xl text-white" /> */}
-                        Loading....
-                      </>
-                    ) : (
-                      "Delete"
-                    )}
+                    {loadingID === post.id ? <>Loading....</> : "Delete"}
                   </button>
                 </li>
               ))}
@@ -216,7 +190,6 @@ const Dashboard = () => {
         )}
       </div>
 
-      {/* Bottom Tab Navigation (Mobile Only) */}
       <div className="fixed bottom-0 left-0 right-0 bg-gray-900 text-white flex justify-around py-3 md:hidden">
         <button
           onClick={() => setSelectedTab("add")}

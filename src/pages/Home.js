@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Loader2 } from "lucide-react";
-import { fetchPosts } from "../services/postService"; // Import the API function
+import { fetchPosts } from "../services/postService";
 
 export default function Home() {
   const [posts, setPosts] = useState([]);

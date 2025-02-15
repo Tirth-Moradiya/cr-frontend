@@ -12,13 +12,11 @@ import Dashboard from "./components/Dashboard";
 import "./index.css";
 import { AuthProvider, useAuth } from "./context/AuthContext";
 
-// ✅ Protected Route Component
 const ProtectedRoute = ({ element }) => {
   const { user } = useAuth();
   return user ? element : <Navigate to="/login" />;
 };
 
-// ✅ Routes Component
 const AppRoutes = () => {
   const { user } = useAuth();
 
@@ -46,7 +44,6 @@ const AppRoutes = () => {
   );
 };
 
-// ✅ Main App Component
 const App = () => {
   return (
     <AuthProvider>

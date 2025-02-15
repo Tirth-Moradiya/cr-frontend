@@ -45,6 +45,8 @@ const Auth = () => {
 
   const handleGoogleLogin = async () => {
     const { user, error } = await loginWithGoogle();
+
+    console.log("user, error", user, error);
     if (error) {
       toast.error(error);
     } else {
