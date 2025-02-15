@@ -82,5 +82,5 @@ npm run build
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact
-For any issues or questions, please contact [your-email@example.com](mailto:your-email@example.com).
+For any issues or questions, please contact tirthmoradiya02@gmail.com.
 
