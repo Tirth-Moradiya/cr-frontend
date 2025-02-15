@@ -1,4 +1,4 @@
-# Project Name
+# Assignment
 
 ## Description
 A brief description of the project, including its purpose and functionality.
@@ -26,7 +26,7 @@ Make sure you have the following installed:
 
 ### Clone the Repository
 ```sh
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/Tirth-Moradiya/cr-frontend.git
 cd your-repo-name
 ```
 
