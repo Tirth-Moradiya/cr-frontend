@@ -26,7 +26,7 @@ const Dashboard = () => {
   const fetchPosts = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/posts/getPost"
+        `${process.env.REACT_APP_API_URL}/getPost`
       );
       setPosts(response.data);
     } catch (error) {
