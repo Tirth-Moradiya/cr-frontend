@@ -9,8 +9,7 @@ import {
   loginWithGoogle,
   logout,
 } from "../services/authService";
-import { FcGoogle } from "react-icons/fc";
-import { FiLogIn, FiLogOut } from "react-icons/fi";
+import { LogIn, LogOut } from "lucide-react";
 
 const Auth = () => {
   const [user, setUser] = useState(null);
@@ -108,7 +107,7 @@ const Auth = () => {
             type="submit"
             className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md transition-all duration-200"
           >
-            <FiLogIn size={20} /> Login
+            <LogIn size={20} /> Login
           </button>
         </form>
 
@@ -116,7 +115,7 @@ const Auth = () => {
           onClick={handleGoogleLogin}
           className="w-full mt-3 flex items-center justify-center gap-2 bg-white text-gray-900 py-2 rounded-md shadow-md hover:bg-gray-200 transition-all duration-200"
         >
-          <FcGoogle size={20} /> Sign in with Google
+          Sign in with Google
         </button>
 
         <button
@@ -133,7 +132,7 @@ const Auth = () => {
               onClick={handleLogout}
               className="mt-2 flex items-center gap-2 justify-center bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-md transition-all duration-200"
             >
-              <FiLogOut size={20} /> Logout
+              <LogOut size={20} /> Logout
             </button>
           </div>
         )}

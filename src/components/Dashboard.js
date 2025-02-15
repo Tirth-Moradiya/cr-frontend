@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { FiLoader, FiPlus, FiEdit, FiTrash } from "react-icons/fi";
+import { Plus, Pencil, Trash, Loader2 } from "lucide-react";
 import {
   fetchPosts,
   addPost,
@@ -116,7 +116,10 @@ const Dashboard = () => {
                 disabled={loading}
               >
                 {loading ? (
-                  <FiLoader className="animate-spin text-lg sm:text-2xl text-white" />
+                  <>
+                    {/* <FiLoader className="animate-spin text-lg sm:text-2xl text-white" /> */}
+                    Loading....
+                  </>
                 ) : (
                   "Add Post"
                 )}
@@ -168,7 +171,10 @@ const Dashboard = () => {
                 disabled={loading}
               >
                 {loading ? (
-                  <FiLoader className="animate-spin text-lg sm:text-2xl text-white" />
+                  <>
+                    {/* <FiLoader className="animate-spin text-lg sm:text-2xl text-white" /> */}
+                    Loading....
+                  </>
                 ) : (
                   "Update Post"
                 )}
@@ -195,7 +201,10 @@ const Dashboard = () => {
                     className="bg-red-500 text-white px-2 sm:px-3 py-1 rounded hover:bg-red-600 flex items-center"
                   >
                     {loadingID === post.id ? (
-                      <FiLoader className="animate-spin text-lg text-white" />
+                      <>
+                        {/* <FiLoader className="animate-spin text-lg sm:text-2xl text-white" /> */}
+                        Loading....
+                      </>
                     ) : (
                       "Delete"
                     )}
@@ -213,19 +222,22 @@ const Dashboard = () => {
           onClick={() => setSelectedTab("add")}
           className="flex flex-col items-center"
         >
-          <FiPlus size={24} /> Add
+          <Plus size={24} />
+          Add
         </button>
         <button
           onClick={() => setSelectedTab("update")}
           className="flex flex-col items-center"
         >
-          <FiEdit size={24} /> Update
+          <Pencil size={24} />
+          Update
         </button>
         <button
           onClick={() => setSelectedTab("delete")}
           className="flex flex-col items-center"
         >
-          <FiTrash size={24} /> Delete
+          <Trash size={24} />
+          Delete
         </button>
       </div>
     </div>

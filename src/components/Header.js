@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
-import { FiMenu, FiX, FiUser } from "react-icons/fi";
+import { Menu, X, User, ChevronDown } from "lucide-react"; // Import from Lucide
 
 const Header = () => {
   const { user, logout } = useAuth();
@@ -34,7 +34,7 @@ const Header = () => {
           className="md:hidden text-2xl"
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          {menuOpen ? <FiX /> : <FiMenu />}
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
         {/* Navigation Menu */}
@@ -67,9 +67,9 @@ const Header = () => {
                 }}
                 className="flex items-center space-x-2 hover:text-gray-200 transition"
               >
-                <FiUser />
+                <User size={20} />
                 <span>{user.email}</span>
-                <span>▼</span>
+                <ChevronDown size={18} />
               </button>
 
               {/* Dropdown */}

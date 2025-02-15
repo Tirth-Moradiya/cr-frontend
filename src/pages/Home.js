@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FiLoader } from "react-icons/fi";
+import { Loader2 } from "lucide-react";
 import { fetchPosts } from "../services/postService"; // Import the API function
 
 export default function Home() {
@@ -26,7 +26,7 @@ export default function Home() {
 
         {loading ? (
           <div className="flex justify-center items-center py-10">
-            <FiLoader className="animate-spin text-3xl text-blue-500" />
+            <Loader2 className="animate-spin text-3xl text-blue-500" />
           </div>
         ) : posts.length === 0 ? (
           <p className="text-gray-400 text-center">No posts available.</p>

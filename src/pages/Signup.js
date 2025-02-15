@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { FiUserPlus } from "react-icons/fi";
+import { Plus } from "lucide-react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { signupUser } from "../services/authService"; // Import API function
@@ -76,8 +76,7 @@ const Signup = () => {
                 disabled={isSubmitting}
                 className="w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white py-2 rounded-md transition-all duration-200"
               >
-                <FiUserPlus size={20} />{" "}
-                {isSubmitting ? "Signing up..." : "Sign Up"}
+                <Plus size={20} /> {isSubmitting ? "Signing up..." : "Sign Up"}
               </button>
 
               <button
